@@ -1,5 +1,5 @@
 FILESEXTRAPATHS:prepend := "${THISDIR}/${PN}:"
 
-SRC_URI += "file://0001-Adding-ssd1306-and-nokia5110-driver.patch"
+SRC_URI += "file://0001-Fix-nokia5110-driver.patch"
 
-KERNEL_MODULE:append = " ssd1306 nokia5110"
+KERNEL_MODULE:append = " nokia5110 ssd1306 spi_bcm2835 spi_bcm2835aux"
