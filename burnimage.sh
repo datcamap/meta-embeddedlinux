@@ -1,6 +1,8 @@
 #!/bin/bash
 IMAGE_PATH="$(ls ~/yocto/poky/build/tmp/deploy/images/raspberrypi4/core-image-minimal*.rootfs.wic.bz2)"
 
+echo "Burning image from: ${IMAGE_PATH}"
+
 mkdir -p ~/yocto/poky/temporary
 rm ~/yocto/poky/temporary/temp.wic
 
