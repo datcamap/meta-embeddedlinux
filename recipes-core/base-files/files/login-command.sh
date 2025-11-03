@@ -1,0 +1,1 @@
+echo 0 | tee /sys/class/graphics/fbcon/cursor_blink

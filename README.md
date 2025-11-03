@@ -19,6 +19,8 @@ WIFI_PSK = "Innotech@#"
 # Ensure Wi-Fi support is available to the image.
 DISTRO_FEATURES:append = " wifi"
 
+dd if=output.rgb565 of=/dev/fb0 bs=$(stat -c %s output.rgb565)
+
 ### porting:
 config device tree
 frame_buffer
