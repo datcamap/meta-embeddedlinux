@@ -1,18 +1,18 @@
-From b00ef73894fca77de3e6dc6b0a36be5847914b5a Mon Sep 17 00:00:00 2001
+From 4c2e9554818e08d00a798fb23e30583787c6da19 Mon Sep 17 00:00:00 2001
 From: datcamap <vipronline24h@gmail.com>
-Date: Thu, 30 Oct 2025 17:25:08 +0700
-Subject: [PATCH 2/2] Add illi9225 device tree node
+Date: Mon, 3 Nov 2025 16:43:18 +0700
+Subject: [PATCH 4/4] Add illi9225 device tree node
 
 ---
- arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 26 ++++++++----
+ arch/arm/boot/dts/bcm2711-rpi-4-b.dts | 29 +++++++++----
  drivers/nokia5110/nokia5110.c         | 59 ++++++++++++++++++---------
- 2 files changed, 57 insertions(+), 28 deletions(-)
+ 2 files changed, 59 insertions(+), 29 deletions(-)
 
 diff --git a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-index 1f61f9c33bdc..fc42127cd906 100644
+index 1f61f9c33bdc..de183f4aed89 100644
 --- a/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
 +++ b/arch/arm/boot/dts/bcm2711-rpi-4-b.dts
-@@ -336,23 +336,33 @@ &spi0 {
+@@ -336,23 +336,34 @@ &spi0 {
  	// 	spi-max-frequency = <125000000>;
  	// };
  
@@ -30,10 +30,11 @@ index 1f61f9c33bdc..fc42127cd906 100644
  		compatible = "nokia5110";
  		reg = <0>;	/* CE0 */
 -		spi-max-frequency = <2000000>;
-+		spi-max-frequency = <4000000>;
- 		dc-gpios = <&gpio 25 GPIO_ACTIVE_HIGH>;
+-		dc-gpios = <&gpio 25 GPIO_ACTIVE_HIGH>;
 -		reset-gpios = <&gpio 24 GPIO_ACTIVE_LOW>;
-+		reset-gpios = <&gpio 24 GPIO_ACTIVE_HIGH>;
++		spi-max-frequency = <4000000>;
++		dc-gpios = <&gpio 27 GPIO_ACTIVE_HIGH>;
++		reset-gpios = <&gpio 22 GPIO_ACTIVE_HIGH>;
 +		bklight-gpios = <&gpio 23 GPIO_ACTIVE_HIGH>;
  		status = "okay";
  	};
@@ -48,9 +49,10 @@ index 1f61f9c33bdc..fc42127cd906 100644
 +		compatible = "vot,v220hf01a-t", "ilitek,ili9225";
 +		reg = <1>; /* CE1 */
 +		spi-max-frequency = <12000000>;
-+		rs-gpios = <&gpio 9 GPIO_ACTIVE_HIGH>;
-+		reset-gpios = <&gpio 8 GPIO_ACTIVE_HIGH>;
++		rs-gpios = <&gpio 25 GPIO_ACTIVE_HIGH>;
++		reset-gpios = <&gpio 24 GPIO_ACTIVE_HIGH>;
 +		rotation = <270>;
++		status = "okay";
  	};
  };
  
