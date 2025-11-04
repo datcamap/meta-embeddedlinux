@@ -12,4 +12,7 @@ IMAGE_INSTALL:append = " \
     linux-firmware-rpidistro-bcm43455 \
     linux-firmware-rpidistro-broadcom-license \
     lsof \
+    vim \
+    sudo \
+    ffmpeg \
 "
