@@ -1,1 +1,1 @@
-echo 0 | tee /sys/class/graphics/fbcon/cursor_blink
+printf '0' > /sys/class/graphics/fbcon/cursor_blink 2>/dev/null

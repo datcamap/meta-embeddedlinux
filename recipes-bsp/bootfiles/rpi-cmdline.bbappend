@@ -1,0 +1,2 @@
+CMDLINE_SERIAL = "console=ttyAMA0,115200n8"
+ENABLE_UART = "1"
