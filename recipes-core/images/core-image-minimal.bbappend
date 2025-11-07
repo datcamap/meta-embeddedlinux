@@ -1,6 +1,9 @@
 
 IMAGE_FEATURES:append = " ssh-server-openssh"
+IMAGE_FEATURES:append = " splash"
 IMAGE_INSTALL:append = " openssh openssh-sftp-server"
+
+IMAGE_INSTALL:append = " systemd systemd-analyze"
 IMAGE_INSTALL:append = " \
     kernel-module-spi-bcm2835 \
     kernel-module-spi-bcm2835aux \
@@ -16,9 +19,8 @@ IMAGE_INSTALL:append = " \
     sudo \
     ffmpeg \
 "
-# ENABLE_UART = "1"
-# CMDLINE_SERIAL = "console=ttyAMA0,115200n8"
-# SERIAL_CONSOLES = "115200;ttyAMA0"
+
+RPI_KERNEL_CMDLINE = "console=tty1 quiet splash vt.global_cursor_default=0"
 
 ROOTFS_POSTPROCESS_COMMAND:append = " disable_fb_getty; "
 

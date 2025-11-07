@@ -5,7 +5,7 @@ echo "Burning image from:
 ${IMAGE_PATH}"
 
 mkdir -p ~/yocto/poky/temporary
-rm ~/yocto/poky/temporary/temp.wic
+rm -f ~/yocto/poky/temporary/temp.wic
 
 cp ${IMAGE_PATH} ~/yocto/poky/temporary/temp.wic.bz2
 bzip2 -d ~/yocto/poky/temporary/temp.wic.bz2
