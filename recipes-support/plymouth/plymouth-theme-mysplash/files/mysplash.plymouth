@@ -1,0 +1,5 @@
+[Plymouth Theme]
+Name=mysplash
+Description=My static splash
+ModuleName=script
+ScriptFile=/usr/share/plymouth/themes/mysplash/mysplash.script

@@ -20,6 +20,8 @@ IMAGE_INSTALL:append = " \
     ffmpeg \
 "
 
+IMAGE_INSTALL:append = " plymouth plymouth-theme-mysplash"
+
 # ROOTFS_POSTPROCESS_COMMAND:append = " disable_fb_getty; "
 
 # disable_fb_getty() {

@@ -1,0 +1,5 @@
+theme = {
+    image = Image("mysplash.png");
+    widget = Sprite(image);
+    widget:SetPosition(0,0);
+}
