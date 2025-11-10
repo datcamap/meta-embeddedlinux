@@ -20,12 +20,10 @@ IMAGE_INSTALL:append = " \
     ffmpeg \
 "
 
-RPI_KERNEL_CMDLINE = "console=tty1 quiet splash vt.global_cursor_default=0"
+# ROOTFS_POSTPROCESS_COMMAND:append = " disable_fb_getty; "
 
-ROOTFS_POSTPROCESS_COMMAND:append = " disable_fb_getty; "
-
-disable_fb_getty() {
-    install -d ${IMAGE_ROOTFS}/etc/systemd/system/getty.target.wants
-    rm -f ${IMAGE_ROOTFS}/etc/systemd/system/getty.target.wants/getty@tty1.service
-    ln -sf /dev/null ${IMAGE_ROOTFS}/etc/systemd/system/getty@tty1.service
-}
+# disable_fb_getty() {
+#     install -d ${IMAGE_ROOTFS}/etc/systemd/system/getty.target.wants
+#     rm -f ${IMAGE_ROOTFS}/etc/systemd/system/getty.target.wants/getty@tty1.service
+#     ln -sf /dev/null ${IMAGE_ROOTFS}/etc/systemd/system/getty@tty1.service
+# }
